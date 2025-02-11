@@ -24,7 +24,7 @@ const { chromium } = require('playwright');
       await page.fill('input[name="password"]', passwords[i]);
 
       await Promise.all([
-        page.waitForNavigation({ waitUntil: 'load', timeout: 60000 }), // 等待页面加载
+        page.waitForNavigation({ waitUntil: 'load', timeout: 120000 }), // 等待页面加载
         page.click('button[type="submit"]')
       ]);
 
