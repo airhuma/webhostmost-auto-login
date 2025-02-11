@@ -32,7 +32,7 @@ const { chromium } = require('playwright');
       console.log(`当前页面 URL: ${page.url()}`);
 
       // 检查是否跳转到 clientarea.php
-      if (page.url().includes('clientarea.php')) {
+      if (page.url().includes('https://client.webhostmost.com/clientarea.php')) {
         console.log(`✅ 用户 ${usernames[i]} 登录成功！`);
       } else {
         // 检查是否有错误提示
