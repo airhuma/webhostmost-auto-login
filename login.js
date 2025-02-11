@@ -21,6 +21,16 @@ const { chromium } = require('playwright');
 
       console.log(`用户 ${usernames[i]} 登录成功！`);
 
+      // 推送成功消息
+      await page.goto(`https://php.hipjs.cloudns.org/api/wxpush.php?txt1=用户 ${usernames[i]} 登录成功！`);
+
+    } catch (error) {
+      console.error(`用户 ${usernames[i]} 登录失败：`, error);
+
+      // 推送失败消息
+      await page.goto(`https://php.hipjs.cloudns.org/api/wxpush.php?txt1=用户 ${usernames[i]} 登录失败！`);
+    } finally {
+      await context.close();
     }
   }
   await browser.close();
